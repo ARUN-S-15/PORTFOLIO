@@ -1,0 +1,124 @@
+.publications {
+  padding: 6rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+html.light .sectionTitle {
+  color: #1a1a1f;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+}
+
+.publicationCard {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+html.light .publicationCard {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.publicationCard:hover {
+  background: rgba(139, 92, 246, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+}
+
+html.light .publicationCard:hover {
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+html.light .content h3 {
+  color: #1a1a1f;
+}
+
+.publisher,
+.docket {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+html.light .publisher,
+html.light .docket {
+  color: #4b5563;
+}
+
+.publisher strong,
+.docket strong {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+html.light .publisher strong,
+html.light .docket strong {
+  color: #7c3aed;
+}
+
+@media (max-width: 768px) {
+  .publications {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .publicationCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}

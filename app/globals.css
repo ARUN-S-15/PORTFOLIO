@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Dark Mode (Default) */
+html.dark,
+html.dark body {
+  color: #e4e4e7;
+  background: #0a0a0f;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+html.light,
+html.light body {
+  color: #1a1a1f;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+}
+
+/* Light mode color overrides */
+html.light section {
+  background: transparent !important;
+}
+
+html.light h1,
+html.light h2,
+html.light h3 {
+  color: #1a1a1f;
+}
+
+html.light p,
+html.light span {
+  color: #4a5568;
+}
+
+html.light .hero::before {
+  background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15), transparent 50%),
+              radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.15), transparent 50%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+input,
+select,
+textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page transition effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #e9ecef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Custom Cursor Styles */
+body,
+a,
+button,
+.magnetic,
+[data-cursor] {
+  cursor: none !important;
+}
+
+/* Mobile - show default cursor */
+@media (max-width: 768px) {
+  body,
+  a,
+  button,
+  .magnetic,
+  [data-cursor] {
+    cursor: auto !important;
+  }
+}

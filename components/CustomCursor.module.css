@@ -1,0 +1,46 @@
+/* Big Dot - Smooth delayed follower */
+.cursorBig {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(139, 92, 246, 0.6));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  filter: blur(3px);
+  transition: opacity 0.3s ease;
+}
+
+/* Small Dot - Instant follower */
+.cursorSmall {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8),
+              0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Mobile - show default cursor */
+@media (max-width: 768px) {
+  .cursorBig,
+  .cursorSmall {
+    display: none;
+  }
+}
+
+/* Light mode adjustments */
+:global(html.light) .cursorBig {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+  mix-blend-mode: multiply;
+}
+
+:global(html.light) .cursorSmall {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6),
+              0 0 15px rgba(124, 58, 237, 0.3);
+}

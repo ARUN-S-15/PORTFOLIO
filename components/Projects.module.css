@@ -1,0 +1,325 @@
+.projects {
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+html.light .sectionTitle {
+  color: #1a1a1f;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+html.light .sectionSubtitle {
+  color: #6b7280;
+}
+
+.carouselWrapper {
+  position: relative;
+  padding: 2rem 0;
+  perspective: 2000px;
+}
+
+.projectsScroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 2rem 1rem;
+  margin: 0 -1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projectsScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.projectCard {
+  flex: 0 0 500px;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.projectCard:active {
+  cursor: grabbing;
+}
+
+html.light .projectCard {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.projectCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.projectCard:hover::after {
+  left: 100%;
+}
+
+.projectCard:hover::before {
+  transform: scaleX(1);
+}
+
+.projectCard:hover {
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.35), 
+              0 0 100px rgba(139, 92, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.projectTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.favicon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.projectHeader h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+}
+
+html.light .projectHeader h3 {
+  color: #1a1a1f;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.projectLinks a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  color: #3b82f6;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.projectLinks a:hover {
+  background: #3b82f6;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.description {
+  color: #a1a1aa;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+html.light .description {
+  color: #4b5563;
+}
+
+.publication {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #a78bfa;
+  font-size: 0.95rem;
+}
+
+html.light .publication {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #7c3aed;
+}
+
+.publication strong {
+  color: #8b5cf6;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.techTag {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+html.light .techTag {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #2563eb;
+}
+
+.scrollBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+}
+
+.scrollBtn:hover {
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.6);
+}
+
+.scrollBtnLeft {
+  left: -25px;
+}
+
+.scrollBtnRight {
+  right: -25px;
+}
+
+.scrollIndicator {
+  text-align: center;
+  margin-top: 2rem;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  animation: bounce 2s infinite;
+}
+
+html.light .scrollIndicator {
+  color: #6b7280;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .projectCard {
+    flex: 0 0 320px;
+    padding: 2rem;
+  }
+  
+  .scrollBtn {
+    display: none;
+  }
+  
+  .carouselWrapper {
+    padding: 1rem 0;
+  }
+  
+  .projectsScroll {
+    padding: 1rem 0.5rem;
+  }
+  
+  .projectHeader h3 {
+    font-size: 1.3rem;
+  }
+  
+  .favicon {
+    font-size: 2rem;
+  }
+}

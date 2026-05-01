@@ -1,0 +1,127 @@
+.profiles {
+  padding: 6rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+html.light .sectionTitle {
+  color: #1a1a1f;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+html.light .subtitle {
+  color: #6b7280;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+html.light .card {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.card:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+}
+
+html.light .card:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+html.light .card h3 {
+  color: #1a1a1f;
+}
+
+.username {
+  color: #3b82f6;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stats {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+html.light .stats {
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .profiles {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+}
