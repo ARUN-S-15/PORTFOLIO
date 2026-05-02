@@ -41,6 +41,27 @@ body {
   line-height: 1.6;
 }
 
+/* Page wrapper to keep desktop alignment and scale down on small viewports */
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  transform-origin: top center;
+}
+
+/* Scale the entire page layout to fit smaller screens while keeping alignment */
+@media (max-width: 1200px) {
+  .page-wrapper {
+    width: 1200px; /* keep desktop layout width but scale to viewport */
+    transform: scale(calc(100vw / 1200));
+  }
+
+  /* Ensure no horizontal overflow when scaled */
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
 /* Light mode color overrides */
 html.light section {
   background: transparent !important;
