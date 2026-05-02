@@ -23,7 +23,7 @@ export default function RootLayout({
         <CustomCursor />
         <ScrollProgress />
         <ParticleBackground />
-        <div className="page-wrapper">{children}</div>
+        {children}
       </body>
     </html>
   )
