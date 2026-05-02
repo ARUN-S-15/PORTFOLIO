@@ -48,6 +48,7 @@ html.light .navbar.scrolled {
 .navLinks {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .navLinks a {
@@ -113,6 +114,56 @@ html.light .navLinks a {
   box-shadow: 0 0 10px #3b82f6;
 }
 
+/* Desktop / Mobile split */
+.desktopLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.hamburgerBar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(10,10,15,0.98);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem 1.5rem;
+  align-items: center;
+  z-index: 1500;
+}
+
+.mobileMenu a {
+  color: #e4e4e7;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .navLinks {
     gap: 1rem;
@@ -128,5 +179,19 @@ html.light .navLinks a {
     height: 40px;
     font-size: 1rem;
     margin-left: 0.5rem;
+  }
+
+  /* Show hamburger on mobile, hide desktop links */
+  .desktopLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+    color: #e4e4e7;
+  }
+
+  .mobileMenu {
+    top: 64px;
   }
 }
